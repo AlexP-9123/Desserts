@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px;
+    background: #fcf8f5;
+    color: #260f08;
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 12px;
+}
+
+.products h1 {
+    grid-column: 1 / -1;
+    margin: 0 0 -8px;
+    font-size: 32px;
+    color: #260f08;
+}
+
+.product {
+    min-width: 0;
+    position: relative;
+}
+
+.surati {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info h3 {
+    margin: 14px 0 6px;
+    color: #876d63;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.info p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.info p:not(.price) {
+    color: #260f08;
+    font-weight: 500;
+}
+
+.price {
+    color: hsl(14, 86%, 42%);
+    font-weight: bold;
+}
+
+
+.cart-add {
+    display: block;
+    width: 145px;
+    height: 42px;
+    margin: -22px auto 0;
+
+    position: relative;
+    z-index: 2;
+
+    border: 1px solid #876d63;
+    border-radius: 24px;
+    background: white;
+    color: #260f08;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.cart-add:hover {
+    border: 2px solid hsl(14, 86%, 42%);
+    color: hsl(14, 86%, 42%);
+}
+
+.cart {
+    padding: 24px;
+    min-height: 300px;
+    border-radius: 10px;
+    background: white;
+}
+
+.cart h2 {
+    margin: 0 0 28px;
+    color: hsl(14, 86%, 42%);
+    font-size: 20px;
+}
+
+.empty-cart {
+    text-align: center;
+}
+
+.empty-cart img {
+    display: block;
+    width: 130px;
+    margin: 0 auto 20px;
+}
+
+.empty-cart p {
+    color: #876d63;
+    font-size: 12px;
+}
+
+.cart-items, .cart-total, .carbon-neutral, .confirm-order {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
